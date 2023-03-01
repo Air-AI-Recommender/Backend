@@ -23,7 +23,7 @@ REASONS = {}
 SERVICES = ['netflix', 'prime', 'disney', 'hbo', 'hulu', 'peacock', 'paramount', 'starz', 'showtime', 'apple', 'mubi']
 DF = pd.DataFrame.from_dict(json.load(open('all_media_data.json', 'r')), orient='index').fillna('NaN')
 GENRES = list(requests.request("GET", "https://streaming-availability.p.rapidapi.com/genres", headers={
-	"X-RapidAPI-Key": "38c146f2c9msh90d9985ae589b34p15eb28jsn87c134334533",
+	"X-RapidAPI-Key": SECRETS["RAPID_KEY"],
 	"X-RapidAPI-Host": "streaming-availability.p.rapidapi.com"
 }).json().values())
 CACHE = {}
